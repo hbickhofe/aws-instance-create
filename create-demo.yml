@@ -2,6 +2,7 @@
 ---
 - name: Create ec2 instance
   hosts: all
+  connection: local
   gather_facts: false
   tasks:
   - name: Create instance 
