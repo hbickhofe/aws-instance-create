@@ -14,10 +14,8 @@
       wait_timeout: 360
       group: ansible-aws 
       instance_tags:
-        type: awx-managed
-      count_tag:
-        type: awx-managed
-      exact_count: 1
+        "type": "awx-managed"
+      count: 1
       vpc_subnet_id: "{{ vpc_subnet_id }}"
       assign_public_ip: yes  
       region: "{{ region }}"
