@@ -1,7 +1,7 @@
 # provision_staging.yml
 ---
 - name: Create ec2 instance
-  hosts: localhost
+  hosts: all
   gather_facts: false
   tasks:
   - name: Create instance 
