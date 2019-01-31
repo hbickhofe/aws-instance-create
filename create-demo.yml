@@ -1,25 +1,23 @@
 # provision_staging.yml
 ---
 - name: Create ec2 instance
-  hosts: all 
-  vars:
-    instance_type: 't2.micro'
+  hosts: localhost
   tasks:
 
   - name: Create instance 
     ec2:
-      key_name: chouse
+      key_name: aws-dom
       instance_type: "{{ instance_type }}" 
       image: ami-08935252a36e25f85
       wait: yes
       wait_timeout: 360
-      group: ansible-container 
+      group: ansible-aws 
       instance_tags:
         type: awx-managed
       count_tag:
         type: awx-managed
       exact_count: 1
-      vpc_subnet_id: subnet-87172fec
+      vpc_subnet_id: "{{ vpc_subnet_id }}"
       assign_public_ip: yes  
       region: eu-west-1c
       termination_protection: yes
