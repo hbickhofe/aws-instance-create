@@ -12,7 +12,7 @@
       image: "{{ ami_image }}"
       wait: yes
       wait_timeout: 360
-      group: ansible-aws 
+      group: http_ssh 
       instance_tags:
         "type": "awx-managed"
       count: 1
